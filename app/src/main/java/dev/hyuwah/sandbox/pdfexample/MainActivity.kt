@@ -1,23 +1,20 @@
 package dev.hyuwah.sandbox.pdfexample
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.FileProvider
-import androidx.core.view.marginStart
-import androidx.core.view.updateLayoutParams
 import es.voghdev.pdfviewpager.library.RemotePDFViewPager
 import es.voghdev.pdfviewpager.library.adapter.PDFPagerAdapter
 import es.voghdev.pdfviewpager.library.remote.DownloadFile
 import es.voghdev.pdfviewpager.library.util.FileUtil
 import kotlinx.android.synthetic.main.activity_main.*
 import java.io.File
-import java.lang.Exception
 
 class MainActivity : AppCompatActivity(), DownloadFile.Listener {
 
