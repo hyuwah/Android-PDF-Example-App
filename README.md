@@ -2,24 +2,28 @@
 
 Sandbox project on how to display PDF File (from url) and share pdf file with Android Sharesheet
 
-## Library Used
+## Method 1 (PdfViewPager)
+
+This library will auto download remote pdf, and display on custom viewpager
+
+### Library Used
 
 I'm using [PdfViewPager](https://github.com/voghDev/PdfViewPager) by [voghDev](https://github.com/voghDev)
 
-## Code Walkthrough
+### Code Walkthrough
 
-### Setup Library
+#### Setup Library
 
 Add `implementation 'es.voghdev.pdfviewpager:library:1.1.0'` on `app/build.gradle`
 
 Add permission needed by the library
-```
+```xml
 <uses-permission android:name="android.permission.INTERNET" />
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 ```
 
-### Setup View
+#### Setup View
 
 If pdf source is from url, we need to use `RemotePDFViewPager` and we're gonna need to add it to our layout programmatically
 
@@ -35,7 +39,7 @@ In this example we use LinearLayout as the container
         app:layout_constraintBottom_toTopOf="@id/bottom_bar"/>
 ```
 
-### Setup Code
+#### Setup Code
 
 On activity (or fragment), we need 4 main component
 
@@ -85,7 +89,7 @@ override fun onProgressUpdate(progress: Int, total: Int) {
 }
 ```
 
-### Sharing PDF
+#### Sharing PDF
 
 To be able to share pdf (or file), we need to use / setup FileProvider on the app
 
@@ -150,6 +154,19 @@ if (file.exists()) {
 }
 ```
 
-## Preview
+### Preview
 
 ![](https://res.cloudinary.com/hyuwah-github-io/image/upload/v1583224491/sandbox-pdf-preview_qr4usx.gif)
+
+## Method 2 (PdfView)
+
+This library doesn't handle downloading remote pdf, it only shows pdf file
+We have to implement our own file download logic
+
+### Library Used
+
+I'm using [PdfView-android](https://github.com/Dmitry-Borodin/pdfview-android) by [Dmitry-Borodin](https://github.com/Dmitry-Borodin)
+
+### Code Walkthrough
+
+TODO
